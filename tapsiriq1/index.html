@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="assignment">
+      <h2 > {{ outputname }} </h2>
+      <p > {{ outputage }}</p>
+      <p >{{ calculateAge() }}</p>
+      <p  >{{ calculaterandom() }}</p>
+      <div>
+        <img v-bind:src="urllink" />
+      </div>
+      <input type="text" v-bind:value="outputname" />
+    </section>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script >
+      const app=Vue.createApp({
+    data(){
+        return{
+            outputname:'Sədan',
+            outputage:20,
+            urllink:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGjfSbNpz456oMg1iC-ihCvLYPv6TzPN0Bu60CnCCK4Yj33rKBbHv1EEskXMitDFxIbYI&usqp=CAU"
+            }
+    },
+    methods:{
+        calculateAge(){
+            return this.outputage+5
+        },
+        calculaterandom(){
+            return Math.floor(Math.random())
+        }
+    }
+}).mount('#assignment')
+    </script>
+</html>
